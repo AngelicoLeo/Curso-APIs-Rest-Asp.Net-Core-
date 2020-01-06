@@ -58,18 +58,6 @@ namespace Alura.ListaLeitura.WebApp.Controllers
             }
             return View(model.ToModel());
         }
-        // Retorna um Json para que possa ser usado por outros aplicativos
-        [HttpGet]
-        public IActionResult DetalhesSemHTML(int id)
-        {
-            var model = _repo.Find(id);
-            if (model == null)
-            {
-                return NotFound();
-            }
-            return Json(model.ToModel());
-        }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
